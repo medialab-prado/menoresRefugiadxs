@@ -25,16 +25,45 @@ window.onload = function() {
 
 function loadPageTemplates(){
     console.log("load templates")
-    $('#page-1').load("templates/page1.html",function(){console.log("loaded1")})
-    $('#page-2').load("templates/page2.html",function(){})
-    $('#page-3').load("templates/page3.html",function(){})
-    $('#page-4').load("templates/page4.html",function(){})
+
+    $('#page-1').load("templates/page1.html",function(){
+        var modal = new jBox('Modal', {
+          attach: '#map-btn-page-1',
+          content: $('#map-page-1'),
+          closeButton: 'box'
+        });
+    })
+
+    $('#page-2').load("templates/page2.html",function(){
+        var modal = new jBox('Modal', {
+          attach: '#map-btn-page-2',
+          content: $('#map-page-2'),
+          closeButton: 'box'
+        });
+    })
+
+    $('#page-3').load("templates/page3.html",function(){
+        var modal = new jBox('Modal', {
+          attach: '#map-btn-page-3',
+          content: $('#map-page-3'),
+          closeButton: 'box'
+        });
+    })
+    $('#page-4').load("templates/page4.html",function(){
+        var modal = new jBox('Modal', {
+          attach: '#map-btn-page-4',
+          content: $('#map-page-4'),
+          closeButton: 'box'
+        });
+    })
+    turnEventsOn();
 }
 
 function turnEventsOn(){
-        $('#timeline').on("click",'.btn-navigation', function(e){
+        /*$('#timeline').on("click",'.btn-navigation', function(e){
             $('.btn-navigation.active').removeClass('active')
             $(this).addClass('active')
-        })
+        })*/
+
 
     }
