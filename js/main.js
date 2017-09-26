@@ -1,16 +1,14 @@
 viewStatus= "story" /* data story */
-pages= 0
-totalPages=3;
+pagesLoaded= 0
+totalPages=7;
 window.onload = function() {
-    console.log("on load")
     width = 1000,
     height = 1000;
     loadPageTemplates()
 
-
     $('#pagepiling').pagepiling({
 	    menu: null,
-        anchors: ["page1","page2","page3","page4"],
+        anchors: ["page1","page2","page3","page4","page5","page6","page7"],
         direction: 'horizontal',
         verticalCentered: true,
         scrollingSpeed: 800,
@@ -26,50 +24,37 @@ window.onload = function() {
 }
 
 function loadPageTemplates(){
-    console.log("load templates")
 
-    $('#page-1').load("templates/page1.html",function(){
-        loadModalEvent(1);
-        counterLoading();
-    })
 
-    $('#page-2').load("templates/page2.html",function(){
-        loadModalEvent(2);
-        counterLoading();
-    })
-
-    $('#page-3').load("templates/page3.html",function(){
-        loadModalEvent(3);
-        counterLoading();
-    })
-    $('#page-4').load("templates/page4.html",function(){
-            loadModalEvent(4);
-            counterLoading();
-    })
-    turnEventsOn();
-
+    for (var i=1; i<= totalPages; i++){
+        (function (n) {
+            $('#page-'+n).load("templates/page"+n+".html",function(){
+                counterLoading();
+                loadModalEvent(n);
+            })
+        })(i)
+    }
+    //turnEventsOn();
 }
 
-function loadModalEvent( i){
+function loadModalEvent(j){
     var modal = new jBox('Modal', {
-      attach: '#map-btn-page-'+i,
-      content: $('#map-page-'+i),
+      attach: '#map-btn-page-'+j,
+      content: $('#map-page-'+j),
       closeButton: 'box'
     });
 }
 
 
 function counterLoading(){
-    pages++;
-
-    if(pages>totalPages){
+    pagesLoaded++;
+    if(pagesLoaded >= totalPages){
+        //Todas las plantillas cargadas
         $('.menu-content').on("click",'.switchMode', function(e){
-            console.log("menu content")
             if(viewStatus=="story") viewStatus="data"
             else{
                  viewStatus="story"
             }
-
             if(viewStatus=="story"){
                 $('.story-content').show();
                 $('.data-content').hide();
