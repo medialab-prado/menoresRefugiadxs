@@ -1,4 +1,6 @@
-
+viewStatus= "story" /* data story */
+pages= 0
+totalPages=3;
 window.onload = function() {
     console.log("on load")
     width = 1000,
@@ -27,36 +29,59 @@ function loadPageTemplates(){
     console.log("load templates")
 
     $('#page-1').load("templates/page1.html",function(){
-        var modal = new jBox('Modal', {
-          attach: '#map-btn-page-1',
-          content: $('#map-page-1'),
-          closeButton: 'box'
-        });
+        loadModalEvent(1);
+        counterLoading();
     })
 
     $('#page-2').load("templates/page2.html",function(){
-        var modal = new jBox('Modal', {
-          attach: '#map-btn-page-2',
-          content: $('#map-page-2'),
-          closeButton: 'box'
-        });
+        loadModalEvent(2);
+        counterLoading();
     })
 
     $('#page-3').load("templates/page3.html",function(){
-        var modal = new jBox('Modal', {
-          attach: '#map-btn-page-3',
-          content: $('#map-page-3'),
-          closeButton: 'box'
-        });
+        loadModalEvent(3);
+        counterLoading();
     })
     $('#page-4').load("templates/page4.html",function(){
-        var modal = new jBox('Modal', {
-          attach: '#map-btn-page-4',
-          content: $('#map-page-4'),
-          closeButton: 'box'
-        });
+            loadModalEvent(4);
+            counterLoading();
     })
     turnEventsOn();
+
+}
+
+function loadModalEvent( i){
+    var modal = new jBox('Modal', {
+      attach: '#map-btn-page-'+i,
+      content: $('#map-page-'+i),
+      closeButton: 'box'
+    });
+}
+
+
+function counterLoading(){
+    pages++;
+
+    if(pages>totalPages){
+        $('.menu-content').on("click",'.switchMode', function(e){
+            console.log("menu content")
+            if(viewStatus=="story") viewStatus="data"
+            else{
+                 viewStatus="story"
+            }
+
+            if(viewStatus=="story"){
+                $('.story-content').show();
+                $('.data-content').hide();
+                $('.menu-content .switchMode').empty().html("ver datos")
+            }
+            else{
+                $('.story-content').hide();
+                $('.data-content').show();
+                $('.menu-content .switchMode').empty().html("ver historia")
+            }
+        })
+    }
 }
 
 function turnEventsOn(){
@@ -64,6 +89,4 @@ function turnEventsOn(){
             $('.btn-navigation.active').removeClass('active')
             $(this).addClass('active')
         })*/
-
-
-    }
+}
