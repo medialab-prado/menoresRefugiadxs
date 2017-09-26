@@ -66,3 +66,26 @@ a.btn-circle{
 .map-popover{
     display: none;
 }
+
+div.section-inner-content{
+    div.story-content{
+        transform-style: preserve-3d;
+        transition: all 1.0s linear;
+        backface-visibility: hidden;
+        position:absolute;
+        top:0;
+        left:0;
+
+    }
+    div.data-content{
+        transform-style: preserve-3d;
+        transition: all 1.0s linear;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        position:absolute;
+        top:0;
+        left:0;
+
+    }
+
+}

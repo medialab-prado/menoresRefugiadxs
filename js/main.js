@@ -56,13 +56,13 @@ function counterLoading(){
                  viewStatus="story"
             }
             if(viewStatus=="story"){
-                $('.story-content').show();
-                $('.data-content').hide();
+                $('.story-content').css('transform','rotateY(0)')
+                $('.data-content').css('transform','rotateY(180deg)')
                 $('.menu-content .switchMode').empty().html("ver datos")
             }
             else{
-                $('.story-content').hide();
-                $('.data-content').show();
+                $('.story-content').css('transform','rotateY(180deg)')
+                $('.data-content').css('transform','rotateY(0)')
                 $('.menu-content .switchMode').empty().html("ver historia")
             }
         })
