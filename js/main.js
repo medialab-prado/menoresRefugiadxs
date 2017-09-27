@@ -56,14 +56,14 @@ function counterLoading(){
                  viewStatus="story"
             }
             if(viewStatus=="story"){
-                $('.story-content').css('transform','rotateY(0)')
-                $('.data-content').css('transform','rotateY(180deg)')
-                $('.menu-content .switchMode').empty().html("ver datos")
+                $('.story-content, .menu-story-content').show();
+                $('.data-content, .menu-data-content').hide();
+                //$('.menu-content .switchMode').empty().html("ver datos")
             }
             else{
-                $('.story-content').css('transform','rotateY(180deg)')
-                $('.data-content').css('transform','rotateY(0)')
-                $('.menu-content .switchMode').empty().html("ver historia")
+                $('.story-content, .menu-story-content').hide();
+                $('.data-content, .menu-data-content').show();
+                //$('.menu-content .switchMode').empty().html("ver historia")
             }
         })
     }
