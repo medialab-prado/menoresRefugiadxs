@@ -1,87 +1,100 @@
 // out: css/home.css, sourcemap: true, compress: true
-p{
+
+p {
     font-size: 12px;
 }
 
-
 .cd-horizontal-timeline .events-content {
-  position: relative;
+    position: relative;
 }
-.cd-horizontal-timeline .events-content li {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  left: 0;
-  top: 0;
-  transform: translateX(-100%);
-  opacity: 0;
-  animation-duration: 0.4s;
-  animation-timing-function: ease-in-out;
-}
-.cd-horizontal-timeline .events-content li.selected {
-  /* visible event content */
-  position: relative;
-  z-index: 2;
-  opacity: 1;
-  transform: translateX(0);
-}
-div.section-container{
 
+.cd-horizontal-timeline .events-content li {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+}
+
+.cd-horizontal-timeline .events-content li.selected {
+    /* visible event content */
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+div.section-container {
     background-color: white;
 }
-
-#timeline{
+.cd-timeline-navigation{
+    padding:0px;
+    margin:0px;
+    text-align: left;
+    align:left;
+}
+#timeline {
     z-index: 10;
     position: absolute;
-    bottom:0px;
-    left:0;
+    bottom: 0;
+    left: 0;
     height: 100px;
-    width:100%;
-    li{
-        display: inline;
+    width: 100%;
+    text-align: left;
+
+    li {
+        display: inline-block;
+        width: 13.9%;
+        margin: 0px;
+        padding: 0px;
+        text-align: left;
+        line-height: auto;
     }
-    a{
+
+    a {
         background-color: white;
+        text-align: left;
+        line-height: auto;
     }
-    a.active{
+    /*a.active{
         background-color:orange;
-    }
-    img{
-        width:14%;
+    }*/
+    img {
+        width:103%;
         opacity: 0.2;
         transition: all 1s;
     }
-    a.active img.img-menu{
+
+    a.active img.img-menu {
         opacity: 1;
     }
 }
 
-div.menu-content{
+div.menu-content {
     height: 100vh;
     background-color: white;
 }
 
-div.extra-btn-container{
+div.extra-btn-container {
     position: absolute;
     left: 700px;
     bottom: 200px;
 }
 
-a.btn-circle{
+a.btn-circle {
     border-radius: 40px;
 }
 
-.map-popover{
+.map-popover {
     display: none;
 }
 
-div.section-inner-content{
-    div.story-content{
+div.section-inner-content {
+    div.story-content {}
 
-    }
-    div.data-content{
-
-
-    }
-
+    div.data-content {}
 }
