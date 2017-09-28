@@ -45,7 +45,6 @@ function loadModalEvent(j){
     });
 }
 
-
 function counterLoading(){
     pagesLoaded++;
     if(pagesLoaded >= totalPages){
