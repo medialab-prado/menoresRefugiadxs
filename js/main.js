@@ -8,13 +8,24 @@ window.onload = function() {
 
     $('#pagepiling').pagepiling({
 	    menu: null,
-        anchors: ["page1","page2","page3","page4","page5","page6","page7"],
+        anchors: ["portada","page1","page2","page3","page4","page5","page6","page7"],
         direction: 'horizontal',
         verticalCentered: true,
         scrollingSpeed: 800,
         easing: 'swing',
+        normalScrollElements:'div',
         afterLoad: function(anchorLink, index){
 			//using index
+
+            index-=1;
+            console.log(index)
+            if(index<=0){
+                    $('#timeline').fadeOut();
+            }else{
+                    $('#timeline').fadeIn();
+            }
+
+
             $('.btn-navigation.active').removeClass('active')
             $('#nav-btn-page'+index + " a").addClass('active')
         }
@@ -25,7 +36,7 @@ window.onload = function() {
 
 function loadPageTemplates(){
 
-
+    $('#portada').load("templates/portada.html")
     for (var i=1; i<= totalPages; i++){
         (function (n) {
             $('#page-'+n).load("templates/page"+n+".html",function(){
@@ -34,6 +45,7 @@ function loadPageTemplates(){
             })
         })(i)
     }
+
     //turnEventsOn();
 }
 

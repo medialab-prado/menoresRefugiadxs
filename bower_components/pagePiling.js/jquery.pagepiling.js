@@ -234,6 +234,7 @@
         * Scrolls the page to the given destination
         */
         function scrollPage(destination, animated) {
+
             var v ={
                 destination: destination,
                 animated: animated,
