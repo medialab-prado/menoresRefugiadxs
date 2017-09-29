@@ -55,6 +55,7 @@ function loadModalEvent(j){
       content: $('#map-page-'+j),
       closeButton: 'box'
     });
+
 }
 
 function counterLoading(){
@@ -62,7 +63,10 @@ function counterLoading(){
     if(pagesLoaded >= totalPages){
         //Todas las plantillas cargadas
         $('.menu-content').on("click",'.switchMode', function(e){
-            if(viewStatus=="story") viewStatus="data"
+            if(viewStatus=="story")
+            {
+                viewStatus="data"
+            }
             else{
                  viewStatus="story"
             }
@@ -77,6 +81,13 @@ function counterLoading(){
                 //$('.menu-content .switchMode').empty().html("ver historia")
             }
         })
+
+        $('#page-6').on("click",'.carousel-btn a', function(e){
+            $('.carousel-btn a.active').removeClass("active")
+            $(this).addClass("active")
+        });
+
+
     }
 }
 
