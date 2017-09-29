@@ -56,6 +56,15 @@ function loadModalEvent(j){
       closeButton: 'box'
     });
 
+    var modal2=
+    new jBox('Modal', {
+        width: '60%',
+        height: '80%',
+      attach: '#referencias-page-btn-'+j,
+      content: $('#referencias-page-'+j),
+      closeButton: 'box'
+    });
+
 }
 
 function counterLoading(){
