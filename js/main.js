@@ -35,8 +35,10 @@ window.onload = function() {
 }
 
 function loadPageTemplates(){
+    $('#portada').load("templates/portada.html",function(){
+        loadModalEvent(0);
+    })
 
-    $('#portada').load("templates/portada.html")
     for (var i=1; i<= totalPages; i++){
         (function (n) {
             $('#page-'+n).load("templates/page"+n+".html",function(){
@@ -45,11 +47,11 @@ function loadPageTemplates(){
             })
         })(i)
     }
-
     //turnEventsOn();
 }
 
 function loadModalEvent(j){
+    //console.log(j)
     var modal = new jBox('Modal', {
       attach: '#map-btn-page-'+j,
       content: $('#map-page-'+j),
@@ -70,6 +72,9 @@ function loadModalEvent(j){
 function counterLoading(){
     pagesLoaded++;
     if(pagesLoaded >= totalPages){
+        var ssize=$( window ).height();
+        var bottomSize=$( "#timeline" ).height();
+        $('.story-content').css("height",ssize-bottomSize+'px')
         //Todas las plantillas cargadas
         $('.menu-content').on("click",'.switchMode', function(e){
             if(viewStatus=="story")
