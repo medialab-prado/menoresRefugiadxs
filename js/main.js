@@ -75,6 +75,7 @@ function counterLoading(){
         var ssize=$( window ).height();
         var bottomSize=$( "#timeline" ).height();
         $('.story-content').css("height",ssize-bottomSize+'px')
+        $('.data-content').css("height",ssize-bottomSize+'px')
         //Todas las plantillas cargadas
         $('.menu-content').on("click",'.switchMode', function(e){
             if(viewStatus=="story")
