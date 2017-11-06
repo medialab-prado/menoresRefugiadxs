@@ -1,4 +1,47 @@
 // out: css/mobile.css, sourcemap: true, compress: true
+@rojo: #da222b;
+
+body{
+    background-color: #EEEDED;
+}
+#main-content{
+    margin-bottom: 80px;
+}
+.navbar-default{
+     background-color: #EEEDED;
+     border: none;
+     a.navbar-brand-custom{
+         font-family: 'Londrina Solid', cursive;
+         color:#000;
+         font-size: 18px;
+         padding: 0px;
+         padding-top:10px;
+         display: inline-block;
+         text-decoration: none;
+
+
+     }
+     .chapter-name{
+         font-family: 'Londrina Solid', cursive;
+         color:@rojo;
+         font-size: 17px;
+     }
+}
+.link-menu{
+    text-align: center;
+    font-family: 'Londrina Solid', cursive;
+    text-decoration: none;
+    color:black;
+        display: inline-block;
+    &:active, &.active{
+        color:@rojo;
+        text-decoration: none;
+    }
+    &:hover{
+        text-decoration: none;
+    }
+}
+
 ul.menu{
     li{
         display: inline-block;
@@ -11,4 +54,101 @@ ul.menu{
 .img-menu{
     height: 60px;
     display: inline-block;
+}
+
+#story-text, #map-text{
+    margin-top:1em;
+}
+
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+#cover-btn{
+    text-align: center;
+    padding:0px;
+    background: #383E4E;
+    color:white;
+    padding-bottom: 10px;
+}
+#cover-creditos{
+    background-color: #AF9F7B;
+    padding:15px;
+}
+
+#cover-social{
+    background-color: #fff;
+    padding:15px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+#cover-footer{
+    padding: 0px;
+    border-bottom: 1px solid black;
+    padding-top:15px;
+    padding-bottom:15px;
+    height:auto;
+    background-color: #fff;
+    min-height: 70px;
+}
+
+#cover-agradecimientos {
+    background-color: #fff;
+    padding-top:10px;
+    padding-bottom: 30px;
+    font-size: 12px;
+    h4{
+
+    }
+}
+
+a.move-link{
+    text-align: center;
+    display: inline-block;
+
+    .circle {
+      background: @rojo;
+      border-radius: 0.8em;
+      -moz-border-radius: 0.8em;
+      -webkit-border-radius: 0.8em;
+      color: #ffffff;
+      display: inline-block;
+      font-weight: normal;
+      line-height: 1.6em;
+      margin-right: 5px;
+      text-align: center;
+      width: 1.6em;
+  }
+    &.next{
+float:right;
+    }
+    &.prev{
+        float:next;
+    }
+}
+/******* SHARING BUTTONS ***/
+ul.share-buttons{
+    display: inline-block;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+ul.share-buttons img{
+    max-width: 28px;
+    margin-left:50px;
+}
+ul.share-buttons li{
+  display: inline;
+}
+
+ul.share-buttons .sr-only{
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
