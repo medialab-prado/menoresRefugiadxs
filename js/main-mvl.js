@@ -13,8 +13,8 @@ function reloadEvents(){
 
         var target = this.hash;
         var $target = $(target);
-        $('.link-menu.active').removeClass("active")
-        $(this).addClass("active")
+        //$('.link-menu.active').removeClass("active")
+        //$(this).addClass("active")
         $('html, body').stop().animate({
             'scrollTop': $target.offset().top
         }, 900, 'swing', function () {
@@ -29,6 +29,45 @@ function reloadEvents(){
     $('.prev').on('click',function (e) {
         renderPage(--currentPage)
     });
+
+    $('#page-6').on("click",'.carousel-btn a', function(e){
+        $('.carousel-btn a.active').removeClass("active")
+        $(this).addClass("active")
+    });
+    
+    Waypoint.destroyAll()
+    var waypoints = $('#story, #mapa, #datos').waypoint({
+      handler: function(direction) {
+          console.log(direction)
+          if(direction=="down")
+            enableMenuElement(this.element.id)
+        },
+        offset: '11%'
+    })
+    var waypoints = $('#story, #mapa, #datos').waypoint({
+      handler: function(direction) {
+          console.log(direction)
+          if(direction=="up")
+            enableMenuElement(this.element.id)
+        },
+        offset: '-11%'
+    })
+/*    var waypoints = $('#mapa').waypoint({
+      handler: function(direction) {
+        enableMenuElement(this.element.id)
+      }
+    })
+    var waypoints = $('#datos').waypoint({
+      handler: function(direction) {
+        enableMenuElement(this.element.id)
+      }
+  })*/
+}
+function enableMenuElement(idElement){
+    console.log(idElement)
+    $('.link-menu.active').removeClass("active")
+    var menu_el=$('a[href^="#'+idElement+'"].link-menu')
+    $(menu_el).addClass("active")
 }
 
 
@@ -50,10 +89,15 @@ function renderPage(pageNumber ){
     if(pageNumber==0){
         my.utils().renderExtTemplate({ name: 'portadamvl', selector: 'body', data: {}  })
     }
+    else if(pageNumber==6){
+        var mdata=paginasData[pageNumber-1]
+        mdata.showPrev=mdata.showNext=true
+        my.utils().renderExtTemplate({ name: 'page6_mob', selector: 'body', data: mdata  })
+    }
     else{
         var mdata=paginasData[pageNumber-1]
         mdata.showPrev=mdata.showNext=true
-        if(pageNumber==1) mdata.showPrev=false;
+        //if(pageNumber==1) mdata.showPrev=false;
         if(pageNumber==7) mdata.showNext=false;
         my.utils().renderExtTemplate({ name: 'index_mob', selector: 'body', data: mdata })
     }

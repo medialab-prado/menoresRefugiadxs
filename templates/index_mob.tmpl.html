@@ -1,42 +1,42 @@
-    <nav class="navbar navbar-default navbar-fixed-top" >
+    <nav class="navbar navbar-default navbar-fixed-top"  >
         <div class="container-fluid">
                 <div class="col-xs-6">
-                    <a class="navbar-brand-custom" href="#">Historia de Zainab</a>
+                    <div><a class="navbar-brand-custom" href="#">Historia de Zainab</a></div>
                     {{if showPrev}} <a class="prev move-link" href="#"> <span class="circle glyphicon glyphicon-chevron-left"> </span></a> {{/if}}
                     <span class="chapter-name"> Capitulo {{:n_page}}  </span>
                     {{if showNext}} <a class="next move-link" href="#"><span class="circle glyphicon glyphicon-chevron-right">  </span></a>{{/if}}
                 </div>
                 <div class="col-xs-2 nopadding ">
-                        <a class="link-menu" href="#story"><img src="images/c1_menu_story.png"  class="img-menu"/>
+                        <a class="link-menu" href="#story"><img src="images/c{{:n_page}}_menu_story.png"  class="img-menu"/>
                         story
                         </a>
                     </div>
                     <div class="col-xs-2 nopadding">
-                        <a class="link-menu" href="#mapa"> <img src="images/c1_menu_mapa.png" class="img-menu"/>
+                        <a class="link-menu" href="#mapa"> <img src="images/c{{:n_page}}_menu_mapa.png" class="img-menu"/>
                             mapa
                         </a>
                     </div>
                     <div class="col-xs-2 nopadding">
-                        <a class="link-menu" href="#datos"> <img src="images/c1_menu_datos.png" class="img-menu"/>
+                        <a class="link-menu" href="#datos"> <img src="images/c{{:n_page}}_menu_datos.png" class="img-menu"/>
                         datos
                     </a>
                     </div>
                 </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="page-{{:n_page}}">
         <div id="main-content">
             <div id="story" class="section">
-                <img src="images/c{{:n_page}}_IMG_story_mob.jpg" class="img-responsive"/>
+                <img src="images/c{{:n_page}}_IMG_story_mob.jpg" class="img-responsive full-width-img"/>
                 <div id="story-text">
                     {{:storytext}}
                 </div>
             </div>
             <div id="mapa" class="section">
-                <img src="images/c{{:n_page}}_mapa_mob.jpg" class="img-responsive"/>
+                <img src="images/c{{:n_page}}_mapa_mob.jpg" class="img-responsive full-width-img{"/>
             </div>
             <div id="datos" class="section">
-                <img src="images/c{{:n_page}}_IMG_grafico_mob.jpg" class="img-responsive"/>
+                <img src="images/c{{:n_page}}_IMG_grafico_mob.jpg" class="img-responsive full-width-img{"/>
                 <div id="map-text">
                     {{:maptext}}
                 </div>

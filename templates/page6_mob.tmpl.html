@@ -1,0 +1,110 @@
+    <nav class="navbar navbar-default navbar-fixed-top " >
+        <div class="container-fluid">
+                <div class="col-xs-6">
+                    <div> <a class="navbar-brand-custom" href="#">Historia de Zainab</a> </div>
+                    {{if showPrev}} <a class="prev move-link" href="#"> <span class="circle glyphicon glyphicon-chevron-left"> </span></a> {{/if}}
+                    <span class="chapter-name"> Capitulo {{:n_page}}  </span>
+                    {{if showNext}} <a class="next move-link" href="#"><span class="circle glyphicon glyphicon-chevron-right">  </span></a>{{/if}}
+                </div>
+                <div class="col-xs-2 nopadding ">
+                        <a class="link-menu" href="#story"><img src="images/c{{:n_page}}_menu_story.png"  class="img-menu"/>
+                        story
+                        </a>
+                    </div>
+                    <div class="col-xs-2 nopadding">
+                        <a class="link-menu" href="#mapa"> <img src="images/c{{:n_page}}_menu_mapa.png" class="img-menu"/>
+                            mapa
+                        </a>
+                    </div>
+                    <div class="col-xs-2 nopadding">
+                        <a class="link-menu" href="#datos"> <img src="images/c{{:n_page}}_menu_datos.png" class="img-menu"/>
+                        datos
+                    </a>
+                    </div>
+                </div>
+    </nav>
+
+    <div class="container-fluid" id="page-{{:n_page}}">
+        <div id="main-content">
+            <div id="story" class="section">
+                <img src="images/c{{:n_page}}_IMG_story_mob.jpg" class="img-responsive full-width-img"/>
+                <div id="story-text">
+                    {{:storytext}}
+                </div>
+            </div>
+            <div id="mapa" class="section">
+                <img src="images/c{{:n_page}}_mapa_mob.jpg" class="img-responsive full-width-img"/>
+            </div>
+            <div id="datos" class="section">
+                <div class="row">
+                    <div class="col-sm-10 col-lg-11">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                  <img src="images/c6_aerea2011_mob.jpg" alt="2011">
+                                </div>
+
+                                <div class="item">
+                                  <img src="images/c6_aerea2012_mob.jpg" alt="2012">
+                                </div>
+
+                                <div class="item">
+                                  <img src="images/c6_aerea2013_mob.jpg" alt="2013">
+                                </div>
+                                <div class="item">
+                                  <img src="images/c6_aerea2014_mob.jpg" alt="2014">
+                                </div>
+                                <div class="item">
+                                  <img src="images/c6_aerea2015_mob.jpg" alt="2015">
+                                </div>
+                                <div class="item">
+                                  <img src="images/c6_aerea2016_mob.jpg" alt="2016">
+                                </div>
+                                <div class="item">
+                                  <img src="images/c6_aerea2017_mob.jpg" alt="2017">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-2 col-lg-1 " style="margin-top:1em;padding-left: 0px;padding-right: 0px;">
+                              <ul class="carousel-btn">
+                                  <a href="#" data-target="#myCarousel" data-slide-to="0" class="carouselGotoBtn btn btn-default active" >
+                                      <li  >
+                                          2011
+                                      </li>
+                                  </a>
+                                  <a href="#" data-target="#myCarousel" data-slide-to="1" class="carouselGotoBtn btn btn-default">
+                                      <li >
+                                      2012
+                                  </li></a>
+                                  <a href="#" data-target="#myCarousel" data-slide-to="2" class="carouselGotoBtn btn btn-default">
+                                      <li >
+                                      2013
+                                  </li></a>
+                                  <a href="#" data-target="#myCarousel" data-slide-to="3" class="carouselGotoBtn btn btn-default">
+                                      <li  >
+                                      2014
+                                  </li></a>
+                                  <a href="#" data-target="#myCarousel" data-slide-to="4" class="carouselGotoBtn btn btn-default">
+                                      <li >
+                                      2015
+                                  </li></a>
+                                  <a href="#" data-target="#myCarousel" data-slide-to="5" class="carouselGotoBtn btn btn-default">
+                                      <li >
+                                      2016
+                                  </li></a>
+                                  <a href="#" data-target="#myCarousel" data-slide-to="6" class="carouselGotoBtn btn btn-default">
+                                      <li>
+                                      2017
+                                  </li></a>
+                              </ul>
+                          </div>
+
+                      </div>
+                  </div>
+                <img src="images/c{{:n_page}}_IMG_grafico_mob.jpg" class="img-responsive"/>
+                <div id="map-text">
+                    {{:maptext}}
+                </div>
+            </div>
+        </div>
+    </div>

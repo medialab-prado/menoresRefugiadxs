@@ -32,6 +32,10 @@ window.onload = function() {
     });
     //turnEventsOn();
 
+
+
+    
+
 }
 
 function loadPageTemplates(){
