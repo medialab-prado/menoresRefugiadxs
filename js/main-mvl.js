@@ -4,7 +4,7 @@ totalPages=7;
 currentPage=0;
 mode="desktop"
 sufix="desk"
-window.onresize = function(){ location.reload(); }
+//window.onresize = function(){ location.reload(); }
 window.onload = function() {
     wwidth=$( window ).width();
     if(wwidth<900) {
