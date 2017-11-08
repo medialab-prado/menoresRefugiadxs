@@ -2,7 +2,16 @@ viewStatus= "story" /* data story */
 pagesLoaded= 0
 totalPages=7;
 currentPage=0;
+mode="desktop"
+sufix="desk"
+window.onresize = function(){ location.reload(); }
 window.onload = function() {
+    wwidth=$( window ).width();
+    if(wwidth<900) {
+        mode="mobile"
+        sufix="mob"
+    }
+
     loadData()
     /**** mobile ****/
 }
@@ -34,7 +43,7 @@ function reloadEvents(){
         $('.carousel-btn a.active').removeClass("active")
         $(this).addClass("active")
     });
-    
+
     Waypoint.destroyAll()
     var waypoints = $('#story, #mapa, #datos').waypoint({
       handler: function(direction) {
@@ -52,6 +61,20 @@ function reloadEvents(){
         },
         offset: '-11%'
     })
+
+    var modal2=
+    new jBox('Modal', {
+        width: '90%',
+        height: '90%',
+      attach: '#referencias-page-btn-'+currentPage,
+      //content: $('#referencias-page-'+j),
+      ajax: {
+        url: 'referencias/page'+currentPage+".html",
+        reload: 'strict'
+        },
+      closeButton: 'box'
+    });
+
 /*    var waypoints = $('#mapa').waypoint({
       handler: function(direction) {
         enableMenuElement(this.element.id)
@@ -87,21 +110,20 @@ function renderPage(pageNumber ){
     console.log(pageNumber)
     $("body").empty();
     if(pageNumber==0){
-        my.utils().renderExtTemplate({ name: 'portadamvl', selector: 'body', data: {}  })
+        my.utils().renderExtTemplate({ name: 'portada_'+sufix, selector: 'body', data: {}  })
     }
     else if(pageNumber==6){
         var mdata=paginasData[pageNumber-1]
         mdata.showPrev=mdata.showNext=true
-        my.utils().renderExtTemplate({ name: 'page6_mob', selector: 'body', data: mdata  })
+        my.utils().renderExtTemplate({ name: 'page6_'+sufix, selector: 'body', data: mdata  })
     }
     else{
         var mdata=paginasData[pageNumber-1]
         mdata.showPrev=mdata.showNext=true
         //if(pageNumber==1) mdata.showPrev=false;
         if(pageNumber==7) mdata.showNext=false;
-        my.utils().renderExtTemplate({ name: 'index_mob', selector: 'body', data: mdata })
+        my.utils().renderExtTemplate({ name: 'page_'+sufix, selector: 'body', data: mdata })
     }
-
 }
 
 var my = my || {};

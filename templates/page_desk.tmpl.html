@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9 section-left">
+            <div class="section-inner-content">
+                <div class="story-content" style="background-image: url(images/c{{:n_page}}_IMG_story.jpg)">
+                <!--     <img src="images/c1_IMG_story.jpg" class="img-responsive" /> imagen de historia-->
+                </div>
+                <div class="data-content" style="display:none; background-image: url(images/c{{:n_page}}_IMG_grafico.jpg)">
+                    <!-- <img src="images/c1_IMG_grafico.jpg" class="img-responsive" /> imagen de datos-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="menu-content">
+                <!-- METER CONTENIDO DEL PANEL DERECHO AQUÍ -->
+                <div class="menu-story-content">
+                    <div class="row">
+                        <div class="col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1 col-xl-7 col-xl-offset-1">
+
+                        <div class="menu-story-inner">
+                        {{:storytext}}
+                        </div>
+                        <!--<a href="#" class="switchMode" class="btn btn-circle">   <img src="images/c{{:n_page}}_ver_grafico.jpg" class="vergrafico img-responsive" /> </a>-->
+                </div>
+            </div>
+                </div>
+                <div class="menu-data-content" style="display:none">
+                    <div class="row">
+                        <div class="col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1 col-xl-7 col-xl-offset-1">
+                            <div class="menu-data-inner">
+                                {{:maptext}}
+                            </div>
+                            <a href="#" class="referencias" id="referencias-page-btn-{{:n_page}}"> Referencias bibliográficas </a>
+                            <!--<a href="#" class="switchMode" class="btn btn-circle">
+                                <img src="images/c{{:n_page}}_ver_story.jpg" class="verstory img-responsive" />
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="extra-btn-container">
+                <a class="" id="map-btn-page-{{:n_page}}" href="#"> <img src="images/c{{:n_page}}_menu_mapa.png" width="60px" height="74px" class="mapa img-responsive" />
+                    ver mapa
+                </a>
+                <a href="#" class="switchMode verstory-btn" class="btn btn-circle">
+                    <img src="images/c{{:n_page}}_menu_story.png" width="60px" height="74px" class="verstory img-responsive" />
+                    ver historia
+                </a>
+                <a href="#" class="switchMode vergrafico-btn" class="btn btn-circle"> <img src="images/c{{:n_page}}_menu_datos.png" width="60px" height="74px" class="vergrafico img-responsive" />
+                    ver datos
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+<div class="map-popover"  id="map-page-{{:n_page}}">
+    <img src="images/c{{:n_page}}_mapa_ACT.jpg" class="img-responsive" />
+</div>

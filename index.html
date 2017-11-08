@@ -9,12 +9,14 @@
     <link href="https://fonts.googleapis.com/css?family=Londrina+Solid" rel="stylesheet">
 
     <!--  CSS -->
-    <link rel="stylesheet" href="css/css/home.css">
+
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/BootstrapXL.css">
     <link href="bower_components/jbox/Source/jBox.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" media='(min-width: 900px)' href="bower_components/pagePiling.js/jquery.pagepiling.css" />
+    <link rel="stylesheet" href="css/css/home.css">
+    <link rel="stylesheet" href="css/css/mobile.css">
 
 
 <!--  JAVASCRIPT -->
@@ -24,18 +26,35 @@
 
 
 
-    <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/jsrender/jsrender.min.js"></script>
 
 
     <!-- fullpage -->
-    <link rel="stylesheet" type="text/css" href="bower_components/pagePiling.js/jquery.pagepiling.css" />
+
     <script type="text/javascript" src="bower_components/pagePiling.js/jquery.pagepiling.js"></script>
     <!--  fullpage -->
+    <script type="text/javascript" src="js/lib/jquery.waypoints.min.js"></script>
 
+    <script>
+        if (window.innerWidth > 900) {
+            var head = document.getElementsByTagName('head')[0];
 
-    <script type="text/javascript" src="js/main.js"></script>
+            var s1 = document.createElement("script");
+            s1.type = "text/javascript";
+            s1.src = "js/main.js";
+            head.appendChild(s1);
+        }else{
+            var head = document.getElementsByTagName('head')[0];
+
+            var s1 = document.createElement("script");
+            s1.type = "text/javascript";
+            s1.src = "js/main-mvl.js";
+            head.appendChild(s1);
+        }
+    </script>
+
 </head>
 
 <body>
