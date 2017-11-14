@@ -1,7 +1,9 @@
 viewStatus= "story" /* data story */
 pagesLoaded= 0
 totalPages=8;
-window.onresize = function(){ location.reload(); }
+var windowWidth = $(window).width();
+
+
 window.onload = function() {
     width = 1000,
     height = 1000;
@@ -31,7 +33,18 @@ window.onload = function() {
             $('#nav-btn-page'+index + " a").addClass('active')
         }
     });  //turnEventsOn();
+    windowWidth = $(window).width();
+   $(window).resize(function(){
 
+       // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
+           if ($(window).width() != windowWidth) {
+               // Update the window width for next time
+
+               windowWidth = $(window).width();
+               // Do stuff here
+               if(windowWidth<900) location.reload();
+           }
+   })
 }
 
 function loadData(){
@@ -90,7 +103,7 @@ function loadModalEvent(j){
       content: $('#map-page-'+j),
       closeButton: 'box'
     });
-    console.log(j)
+
     var modal2=
     new jBox('Modal', {
         width: '60%',

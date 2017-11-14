@@ -4,7 +4,7 @@ totalPages=7;
 currentPage=0;
 mode="desktop"
 sufix="desk"
-//window.onresize = function(){ location.reload(); }
+
 window.onload = function() {
     wwidth=$( window ).width();
     if(wwidth<900) {
@@ -14,6 +14,17 @@ window.onload = function() {
 
     loadData()
     /**** mobile ****/
+    windowWidth = $(window).width();
+   $(window).resize(function(){
+
+       // Check window width has actually changed and it's not just iOS triggering a resize event on scroll
+           if ($(window).width() != windowWidth) {
+               // Update the window width for next time
+               windowWidth = $(window).width();
+               // Do stuff here
+               if(windowWidth>900) location.reload();
+           }
+   })
 }
 
 function reloadEvents(){
