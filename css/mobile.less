@@ -44,7 +44,12 @@ a.referencias{
          font-family: 'Londrina Solid', cursive;
          color:@rojo;
          font-size: 17px;
+         @media (min-width:768px) {
+                 margin-left:6px;
+                 margin-right:6px;
+            }
      }
+
 }
 .link-menu{
     text-align: center;
@@ -140,10 +145,10 @@ a.move-link{
       width: 1.6em;
   }
     &.next{
-float:right;
+//float:right;
     }
     &.prev{
-        float:next;
+//        float:left;
     }
 }
 /******* SHARING BUTTONS ***/
